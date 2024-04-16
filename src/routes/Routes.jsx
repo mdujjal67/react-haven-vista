@@ -7,6 +7,8 @@ import UserProfile from "../pages/user-profile/UserProfile";
 import Agents from "../pages/agents/Agents";
 import EstateDetails from "../pages/estate-details/EstateDetails";
 import NotFoundPage from "../components/NotFoundPage";
+import Register from "../pages/register/Register";
+import Login from "../pages/login/Login";
 
 export const router = createBrowserRouter([
     {
@@ -30,6 +32,14 @@ export const router = createBrowserRouter([
         {
           path:'/user-profile',
           element:<UserProfile></UserProfile>
+        },
+        {
+          path:'/register',
+          element:<Register></Register>
+        },
+        {
+          path:'/login',
+          element:<Login></Login>
         },
         {
           path:'/agents',

@@ -17,7 +17,7 @@ const Navbar = () => {
                             <Link className="bg-gray-100 text-[#131313CC] hover:text-[#23BE0A] p-2 rounded-xl mb-2" to='/agents'>Agents</Link>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">Haven Vista</a>
+                    <a className="btn btn-ghost text-xl hover:bg-[#22be0ad8] hover:text-white">Haven Vista</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -28,7 +28,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Login</a>
+                    <Link to='/register' className="btn">Login</Link>
                 </div>
             </div>
         </div>

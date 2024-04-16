@@ -12,7 +12,7 @@ const BannerContent = () => {
                     and Find Your Perfect Haven</p>
                 <a href="#estate">
                     <div className="relative">
-                        <button className="pl-4 pr-10 py-2 text-white bg-[#23BE0A] rounded-[8px]">Show Estates</button>
+                        <button className="pl-4 pr-10 py-2 text-white bg-[#23BE0A] hover:bg-[#22be0ad8] rounded-[8px]">Show Estates</button>
                         <FaCircleArrowRight className="text-white absolute top-[13px] left-[120px]" />
                     </div>
                 </a>

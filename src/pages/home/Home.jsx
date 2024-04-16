@@ -9,7 +9,7 @@ const Home = () => {
             <div>
                 <SwiperSlider></SwiperSlider>
             </div>
-            <div id="estate" className="my-[200px] container mx-auto">
+            <div id="estate" className="my-[100px] container mx-auto">
                 <EstateContainer></EstateContainer>
             </div>
 
