@@ -1,42 +1,29 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+h1,h2,h3,h4,h5,h6{
+    font-family: "Playfair Display", serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+body{
+    font-family: "Work Sans", sans-serif;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.work-sans{
+    font-family: "Work Sans", sans-serif;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.play-fair{
+    font-family: "Playfair Display", serif;
 }
+.isActive{
+    border: 1px solid #23BE0A;
+    color: #23BE0A;
+}
+.menu-item{
+    padding: 13px 16px;
+    transition: all .3s ease;
+    border-radius: 8px;
+}
+.menu-item:hover{
+    color: #23BE0A;
+    border: 1px solid #23BE0A;
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
