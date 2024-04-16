@@ -74,7 +74,7 @@ const Login = () => {
 
                         </div>
                         <div className="form-control mt-4 px-8 pb-6 relative">
-                            <button onClick={()=> googleLogIn(auth) } className="btn border-none text-[#00000082] hover:bg-gray-200">Login with Google</button>
+                            <button onClick={()=> googleLogIn(auth)} className="btn border-none text-[#00000082] hover:bg-gray-200">Login with Google</button>
                             <FcGoogle className="absolute top-3 left-[60px] text-[24px]" />
                         </div>
                     </div>
