@@ -1,14 +1,17 @@
+import EstateContainer from "../../components/EstateContainer";
 import Navbar from "../../components/Navbar";
-import SwipperSlider from "../../components/SwipperSlider";
+import SwiperSlider from "../../components/SwiperSlider";
 
 const Home = () => {
     return (
         <div className="mx-auto">
             <Navbar></Navbar>
             <div>
-                <SwipperSlider></SwipperSlider>
+                <SwiperSlider></SwiperSlider>
             </div>
-            <h1>Estate Section</h1>
+            <div id="estate" className="my-[200px] container mx-auto">
+                <EstateContainer></EstateContainer>
+            </div>
 
         </div>
     );
