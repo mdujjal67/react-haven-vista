@@ -1,77 +1,112 @@
-{
-    "luxuryProperties": [
-      {
-        "image": "/src/assets/penthouse.jpg",
-        "id": 1,
-        "estate_title": "Luxury Penthouse with Panoramic Views",
-        "segment_name": "Penthouse",
-        "description": "Experience luxury living at its finest in this breathtaking penthouse offering panoramic views of the city skyline. Spacious and elegantly designed, this penthouse features modern amenities and exquisite finishes.",
-        "price": "$5,000,000",
+[
+    {
+    "image": "https://i.ibb.co/dtXh6hw/banner-4.jpg",
+    "id": 1,
+    "estate_title": "Luxury Penthouse with Panoramic Views",
+    "segment_name": "Penthouse",
+    "description": "Experience luxury living at its finest in this breathtaking penthouse offering panoramic views of the city skyline. Spacious and elegantly designed, this penthouse features modern amenities and exquisite finishes.",
+    "price": "$5,000,000",
+    "status": "sale",
+    "area": "3,000 sq ft",
+    "location": "Downtown Metropolis",
+    "facilities": ["Spa", "Gym", "Terrace"]
+    },
+    {
+    "image": "https://i.ibb.co/D4kbKbG/pexels-expect-best-323780.jpg",
+    "id": 2,
+    "estate_title": "Exclusive Beachfront Villa",
+    "segment_name": "Villa",
+    "description": "Escape to paradise with this exclusive beachfront villa. Enjoy direct access to the pristine beach and stunning ocean views from every room. This luxurious retreat offers privacy and serenity in a tropical setting.",
+    "price": "$8,500,000",
+    "status": "sale",
+    "area": "5,000 sq ft",
+    "location": "Tropical Island",
+    "facilities": ["Private Beach", "Infinity Pool", "Outdoor Kitchen"]
+    },
+    {
+    "image": "https://i.ibb.co/Bt825yT/pexels-asad-photo-maldives-1268871.jpg",
+    "id": 3,
+    "estate_title": "Luxury Resort & Spa",
+    "segment_name": "Resort",
+    "description": "Indulge in ultimate relaxation at this luxury resort & spa. Surrounded by lush tropical gardens and pristine beaches, this resort offers world-class amenities and personalized service. Experience serenity and tranquility in paradise.",
+    "price": "$12,000,000",
+    "status": "sale",
+    "area": "10 acres",
+    "location": "Exotic Destination",
+    "facilities": ["Spa", "Private Villas", "Fine Dining"]
+    },
+    {
+    "image": "https://i.ibb.co/cv58y4k/pexels-max-vakhtbovycn-7061661.jpg",
+    "id": 4,
+    "estate_title": "Private Island Retreat",
+    "segment_name": "Villa",
+    "description": "Own your private slice of paradise with this stunning private island retreat. With white sandy beaches, crystal-clear waters, and lush tropical landscapes, this exclusive island offers unparalleled luxury and seclusion.",
+    "price": "$20,000,000",
+    "status": "sale",
+    "area": "50 acres",
+    "location": "Tropical Archipelago",
+    "facilities": ["Beachfront Villas", "Helipad", "Marina"]
+    },
+    {
+    "image": "https://i.ibb.co/ZBd05pG/pexels-pixabay-208736.jpg",
+    "id": 5,
+    "estate_title": "Majestic Coastal Mansion",
+    "segment_name": "Mansion",
+    "description": "Embrace grandeur and sophistication in this majestic coastal mansion. With sweeping ocean views, expansive living spaces, and luxurious amenities, this mansion is the epitome of coastal luxury living.",
+    "price": "$15,000,000",
+    "status": "sale",
+    "area": "8,000 sq ft",
+    "location": "Coastal Paradise",
+    "facilities": ["Infinity Pool", "Home Theater", "Wine Cellar"]
+    },
+    {
+    "image": "https://i.ibb.co/BG1ktxb/banner-2.jpg",
+    "id": 6,
+    "estate_title": "Secluded Mountain Villa",
+    "segment_name": "Private Island",
+    "description": "Discover serenity and tranquility in this secluded mountain villa. Nestled amidst pristine nature and breathtaking mountain views, this villa offers the perfect escape from the hustle and bustle of city life.",
+    "price": "$6,500,000",
+    "status": "sale",
+    "area": "4,500 sq ft",
+    "location": "Mountain Retreat",
+    "facilities": ["Private Pool", "Outdoor Fireplace", "Hiking Trails"]
+    },
+    {
+        "image": "https://i.ibb.co/KhSmhnq/luxury-Residence.jpg",
+        "id": 7,
+        "estate_title": "Luxury Waterfront Residence",
+        "segment_name": "Residence",
+        "description": "Live in luxury along the waterfront in this exquisite residence. With breathtaking views of the marina and luxurious amenities, this waterfront property offers the perfect blend of elegance and comfort.",
+        "price": "$10,000,000",
         "status": "sale",
-        "area": "3,000 sq ft",
-        "location": "Downtown Metropolis",
-        "facilities": ["Spa", "Gym", "Terrace"]
+        "area": "6,000 sq ft",
+        "location": "Marina District",
+        "facilities": ["Private Dock", "Infinity Pool", "Rooftop Terrace"]
       },
       {
-        "image": "/src/assets/beachfront-villa.jpg",
-        "id": 2,
-        "estate_title": "Exclusive Beachfront Villa",
-        "segment_name": "Villa",
-        "description": "Escape to paradise with this exclusive beachfront villa. Enjoy direct access to the pristine beach and stunning ocean views from every room. This luxurious retreat offers privacy and serenity in a tropical setting.",
-        "price": "$8,500,000",
-        "status": "sale",
-        "area": "5,000 sq ft",
-        "location": "Tropical Island",
-        "facilities": ["Private Beach", "Infinity Pool", "Outdoor Kitchen"]
-      },
-      {
-        "image": "/src/assets/resort.jpg",
-        "id": 3,
-        "estate_title": "Luxury Resort & Spa",
-        "segment_name": "Resort",
-        "description": "Indulge in ultimate relaxation at this luxury resort & spa. Surrounded by lush tropical gardens and pristine beaches, this resort offers world-class amenities and personalized service. Experience serenity and tranquility in paradise.",
-        "price": "$12,000,000",
-        "status": "sale",
-        "area": "10 acres",
-        "location": "Exotic Destination",
-        "facilities": ["Spa", "Private Villas", "Fine Dining"]
-      },
-      {
-        "image": "/src/assets/private-island.jpg",
-        "id": 4,
-        "estate_title": "Private Island Retreat",
-        "segment_name": "Private Island",
-        "description": "Own your private slice of paradise with this stunning private island retreat. With white sandy beaches, crystal-clear waters, and lush tropical landscapes, this exclusive island offers unparalleled luxury and seclusion.",
-        "price": "$20,000,000",
-        "status": "sale",
-        "area": "50 acres",
-        "location": "Tropical Archipelago",
-        "facilities": ["Beachfront Villas", "Helipad", "Marina"]
-      },
-      {
-        "image": "/src/assets/coastal-mansion.jpg",
-        "id": 5,
-        "estate_title": "Majestic Coastal Mansion",
+        "image": "https://i.ibb.co/WH3mY7z/luxury.jpg",
+        "id": 8,
+        "estate_title": "Luxury Historic Mansion",
         "segment_name": "Mansion",
-        "description": "Embrace grandeur and sophistication in this majestic coastal mansion. With sweeping ocean views, expansive living spaces, and luxurious amenities, this mansion is the epitome of coastal luxury living.",
-        "price": "$15,000,000",
+        "description": "Step back in time and experience luxury living in this historic mansion. With timeless architecture and elegant interiors, this mansion exudes sophistication and charm.",
+        "price": "$18,000,000",
         "status": "sale",
-        "area": "8,000 sq ft",
-        "location": "Coastal Paradise",
-        "facilities": ["Infinity Pool", "Home Theater", "Wine Cellar"]
+        "area": "12,000 sq ft",
+        "location": "Historic District",
+        "facilities": ["Ballroom", "Library", "Wine Cellar"]
       },
       {
-        "image": "/src/assets/mountain-villa.jpg",
-        "id": 6,
-        "estate_title": "Secluded Mountain Villa",
-        "segment_name": "Villa",
-        "description": "Discover serenity and tranquility in this secluded mountain villa. Nestled amidst pristine nature and breathtaking mountain views, this villa offers the perfect escape from the hustle and bustle of city life.",
-        "price": "$6,500,000",
+        "image": "https://i.ibb.co/W2fzYVf/Luxury-Apartments.jpg",
+        "id": 9,
+        "estate_title": "Luxury City Apartment",
+        "segment_name": "Apartment",
+        "description": "Experience urban luxury living in this stylish city apartment. Located in the heart of the city, this apartment offers modern amenities, stunning views, and convenient access to dining and entertainment.",
+        "price": "$3,500,000",
         "status": "sale",
-        "area": "4,500 sq ft",
-        "location": "Mountain Retreat",
-        "facilities": ["Private Pool", "Outdoor Fireplace", "Hiking Trails"]
+        "area": "2,000 sq ft",
+        "location": "City Center",
+        "facilities": ["Concierge Service", "Fitness Center", "Sky Lounge"]
       }
-    ]
-  }
+
+]
   

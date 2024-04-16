@@ -5,6 +5,8 @@ import Home from "../pages/home/Home";
 import UpdateProfile from "../pages/update-profile/UpdateProfile";
 import UserProfile from "../pages/user-profile/UserProfile";
 import Agents from "../pages/agents/Agents";
+import EstateDetails from "../pages/estate-details/EstateDetails";
+import NotFoundPage from "../components/NotFoundPage";
 
 export const router = createBrowserRouter([
     {
@@ -15,6 +17,11 @@ export const router = createBrowserRouter([
           path: '/',
           element: <Home></Home>,
           loader: () => fetch('Estate.json'),
+        },
+        {
+          path: '/home/:bookId',
+          element: <EstateDetails></EstateDetails> ,
+          loader: () => fetch(`Estate.json`)
         },
         {
           path:'/update-profile',
@@ -31,6 +38,10 @@ export const router = createBrowserRouter([
         {
           path: 'footer',
           element: <Footer></Footer>
+      },
+      {
+        path: "*",
+        element: <NotFoundPage></NotFoundPage> // Catch-all route for 404 Not Found
       },
       ]
     },

@@ -37,7 +37,7 @@ const SwipperSlider = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div>
-                        <img className='h-[500px] rounded-2xl w-full' src="/src/assets/banner-2.jpg" alt="property-image" />
+                        <img className='h-[500px] rounded-2xl w-full' src="/src/assets/banner-2.1.jpg" alt="property-image" />
                         <div className='absolute top-[30%]'>
                             <BannerContent></BannerContent>
                         </div>
