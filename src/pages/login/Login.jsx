@@ -42,13 +42,13 @@ const Login = () => {
           });
 
 
-        gitHubLogin(email, password)
-        .then(result => {
-        console.log(result.user)
-        })
-        .catch((error) => {
-        console.log(error)
-        });
+        // gitHubLogin(email, password)
+        // .then(result => {
+        // console.log(result.user)
+        // })
+        // .catch((error) => {
+        // console.log(error)
+        // });
       }
 
     //   for google login
