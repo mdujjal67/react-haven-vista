@@ -24,7 +24,7 @@ export const router = createBrowserRouter([
         {
           path: '/home/:id',
           element: <EstateDetails></EstateDetails> ,
-          loader: () => fetch(`Estate.json`)
+          loader: () => fetch(`/Estate.json`)
         },
         {
           path:'/update-profile',

@@ -3,8 +3,8 @@ import { Link, useLoaderData, useParams } from 'react-router-dom';
 import Navbar from "../../components/Navbar";
 const EstateDetails = () => {
     const EstateDetails = useLoaderData();
-    const { estateId } = useParams();
-    const estate = EstateDetails.find(estate => estate.estateId == estateId);
+    const { id } = useParams();
+    const estate = EstateDetails.find(estate => estate.id == id);
 
     const { location, facilities, estate_title, segment_name, description, price, status, area, image } = estate || {}
 
