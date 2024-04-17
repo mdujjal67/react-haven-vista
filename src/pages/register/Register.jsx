@@ -6,6 +6,7 @@ import {FcGoogle } from "react-icons/fc";
 // import { AuthContext } from "../authProvider/AuthProvider";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hook/useAuth";
+import { useEffect } from "react";
 
 const Register = () => {
     const {createUser, googleLogin, gitHubLogin} = useAuth()
@@ -22,7 +23,10 @@ const Register = () => {
         })
       }
 
-
+      // dynamic title
+    useEffect((()=>{
+        document.title = "Haven Vista | Register"
+    }),[])
 
       //   for google login
       const handleGoogleLogin = () => {

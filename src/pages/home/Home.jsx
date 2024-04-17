@@ -1,8 +1,16 @@
+import { useEffect } from "react";
 import EstateContainer from "../../components/EstateContainer";
 import Navbar from "../../components/Navbar";
 import SwiperSlider from "../../components/SwiperSlider";
 
 const Home = () => {
+
+    // dynamic title
+    useEffect((()=>{
+        document.title = "Haven Vista | Home"
+    }),[])
+
+
     return (
         <div className="mx-auto">
             <Navbar></Navbar>

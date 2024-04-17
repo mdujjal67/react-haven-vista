@@ -1,6 +1,12 @@
+import { useEffect } from "react";
 import Navbar from "../../components/Navbar";
 
 const UserProfile = () => {
+
+    useEffect((()=>{
+        document.title = "Haven Vista | User-Profile"
+    }),[])
+
     return (
         <div>
             <Navbar></Navbar>

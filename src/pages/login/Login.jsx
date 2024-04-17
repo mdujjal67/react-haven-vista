@@ -8,9 +8,14 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../hook/useAuth";
 // import auth from "../firebase/firebaseConfig";
 import { IoLogoGithub } from "react-icons/io";
+import { useEffect } from "react";
 
 
 const Login = () => {
+
+    useEffect((()=>{
+        document.title = "Haven Vista | Login"
+    }),[])
 
     const { signInUser, googleLogin, gitHubLogin } =  useAuth()
 
@@ -28,6 +33,7 @@ const Login = () => {
         })
     }
 
+    
     const { register, handleSubmit, formState: { errors }} = useForm()
 
     const onSubmit= (data) => {

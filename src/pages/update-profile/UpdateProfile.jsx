@@ -1,7 +1,13 @@
+import { useEffect } from "react";
 import Navbar from "../../components/Navbar";
 
 
 const UpdateProfile = () => {
+
+    useEffect((()=>{
+        document.title = "Haven Vista | Update-Profile"
+    }),[])
+
     return (
         <div>
             <Navbar></Navbar>

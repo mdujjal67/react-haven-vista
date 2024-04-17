@@ -1,7 +1,13 @@
 import { CiLocationOn } from "react-icons/ci";
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import Navbar from "../../components/Navbar";
+import { useEffect } from "react";
 const EstateDetails = () => {
+
+    useEffect((()=>{
+        document.title = "Haven Vista | Extate-Details"
+    }),[])
+
     const EstateDetails = useLoaderData();
     const { id } = useParams();
     const estate = EstateDetails.find(estate => estate.id == id);
