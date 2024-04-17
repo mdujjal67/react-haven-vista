@@ -9,7 +9,7 @@ const Navbar = () => {
         .then()
         .cache()
     }
-    console.log(user)
+    // console.log(user)
     return (
         <div className="container mx-auto">
             <div className="navbar bg-base-100">
@@ -46,13 +46,13 @@ const Navbar = () => {
                     </div> */}
                     {
                         user ? <div className="dropdown dropdown-end flex items-center">
-                            <h2>Email: {user?.email}</h2>
+                            <h2>{user?.email}</h2>
                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
                                     <img src={user?. photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} alt="user" />
                                 </div>
                             </label>
-                              <button onClick={handleSignOut} className="btn btn-sm btn-ghost">Sign Out</button>
+                              <button onClick={handleSignOut} className="btn btn-sm btn-ghost">Log Out</button>
                             
                             {/* <ul className="menu menu-sm dropdown-content mt-3 z-{1} p-2 shadow bg-base-100 rounded-box w-52">
                                 <li>

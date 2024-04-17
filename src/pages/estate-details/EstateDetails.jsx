@@ -1,5 +1,6 @@
 import { CiLocationOn } from "react-icons/ci";
 import { Link, useLoaderData, useParams } from 'react-router-dom';
+import Navbar from "../../components/Navbar";
 const EstateDetails = () => {
     const EstateDetails = useLoaderData();
     const { estateId } = useParams();
@@ -9,6 +10,7 @@ const EstateDetails = () => {
 
     return (
         <div>
+            <Navbar></Navbar>
             <div className='container mx-auto lg:grid grid-cols-2 justify-between gap-12 mb-[100px] mt-[52px] text-center lg:text-left'>
                 <div className='col-span-1 p-10 lg:m-0'>
                     <img className='lg:w-full lg:h-[464px] mx-auto scale-110' src={image} alt="" />
@@ -27,19 +29,19 @@ const EstateDetails = () => {
                     </div>
                     <hr className='text-[#13131326] mt-6 mb-4 mx-4 lg:mx-0' />
                     <div className='flex gap-[60px] ml-4 lg:ml-0'>
-                        <p className='text-[#131313B3]'>Number of Pages:</p>
-                        <p className='font-bold'>{price}</p>
+                        <p className='text-[#131313B3]'>Price:</p>
+                        <p className='font-bold ml-[85px]'>{price}</p>
                     </div>
                     <div className='flex gap-[120px] py-3 mx-4 lg:mx-0'>
-                        <p className='text-[#131313B3]'>Publisher:</p>
+                        <p className='text-[#131313B3]'>Facilities:</p>
                         <p className='font-bold'>{facilities}</p>
                     </div>
                     <div className='flex gap-[55px] ml-4 lg:ml-0'>
-                        <p className='text-[#131313B3]'>Year of Publishing:</p>
-                        <p className='font-bold'>{status}</p>
+                        <p className='text-[#131313B3]'>Status:</p>
+                        <p className='font-bold ml-[85px]'>{status}</p>
                     </div>
                     <div className='flex gap-[150px] py-3 ml-4 lg:ml-0'>
-                        <p className='text-[#131313B3]'>Rating:</p>
+                        <p className='text-[#131313B3]'>Area:</p>
                         <p className='font-bold'>{area}</p>
                     </div>
                     <Link to='/'>

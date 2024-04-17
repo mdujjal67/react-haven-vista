@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { CiLocationOn } from "react-icons/ci";
 
 import PropTypes from 'prop-types';
-const EstateCard = ({ estates }) => {
-    const { location, facilities, estate_title, segment_name, description, price, status, area, image, id } = estates
+const EstateCard = ({ estate }) => {
+    const { location, facilities, estate_title, segment_name, description, price, status, area, image, id } = estate
     return (
         <div>
 
@@ -37,6 +37,6 @@ const EstateCard = ({ estates }) => {
     );
 };
 EstateCard.propTypes = {
-    estates: PropTypes.object
+    estate: PropTypes.object
 };
 export default EstateCard;

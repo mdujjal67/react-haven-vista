@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar";
-import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 // import { useContext } from "react";
 // import { AuthContext } from "../authProvider/AuthProvider";
@@ -14,6 +13,20 @@ import { IoLogoGithub } from "react-icons/io";
 const Login = () => {
 
     const { signInUser, googleLogin, gitHubLogin } =  useAuth()
+
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location?.state || '/'
+    console.log(location)
+
+    const handleSocialLogin = (socialProvider) => {
+        socialProvider()
+        .then(result =>{
+            if(result.user){
+                navigate(from)
+            }
+        })
+    }
 
     const { register, handleSubmit, formState: { errors }} = useForm()
 
@@ -45,8 +58,8 @@ const Login = () => {
       }
 
 
-    //   for google login
-      const handlegitHubLogin = () => {
+    //   for github login
+      const handleGitHubLogin = () => {
         gitHubLogin()
         .then(result => {
         console.log(result.user)
@@ -96,12 +109,11 @@ const Login = () => {
                             <hr className="w-full mr-8" />
                         </div>
                         <div className="form-control mt-3 px-8 relative">
-                            <button onClick={()=> handlegitHubLogin()} className="btn border-none bg-[black] hover:bg-[#000000cb] text-white">Login with Github</button>
+                            <button onClick={()=> handleSocialLogin(handleGitHubLogin)} className="btn border-none bg-[black] hover:bg-[#000000cb] text-white">Login with Github</button>
                             <IoLogoGithub className="text-white absolute top-3 left-[60px] text-[24px]" />
-
                         </div>
                         <div className="form-control mt-4 px-8 pb-6 relative">
-                            <button onClick={()=> handleGoogleLogin()} className="btn border-none text-[#00000082] hover:bg-gray-200">Login with Google</button>
+                            <button onClick={()=> handleSocialLogin(handleGoogleLogin)} className="btn border-none text-[#00000082] hover:bg-gray-200">Login with Google</button>
                             <FcGoogle className="absolute top-3 left-[60px] text-[24px]" />
                         </div>
                     </div>

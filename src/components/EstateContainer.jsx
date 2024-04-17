@@ -12,7 +12,7 @@ const EstateContainer = () => {
                 {/* books card */}
                 <div className="lg:grid grid-cols-3 lg:gap-8">
                     {
-                        estates.map((estates) => <EstateCard key={estates.id} estates={estates}></EstateCard>)
+                        estates.map((estate) => <EstateCard key={estate.id} estate={estate}></EstateCard>)
                     }
                 </div>
             </div>

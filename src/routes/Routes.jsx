@@ -9,6 +9,7 @@ import EstateDetails from "../pages/estate-details/EstateDetails";
 import NotFoundPage from "../components/NotFoundPage";
 import Register from "../pages/register/Register";
 import Login from "../pages/login/Login";
+import PrivateRoute from "../components/privateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -31,7 +32,9 @@ export const router = createBrowserRouter([
         },
         {
           path:'/user-profile',
-          element:<UserProfile></UserProfile>
+          element:<PrivateRoute>
+            <UserProfile></UserProfile>
+          </PrivateRoute>
         },
         {
           path:'/register',

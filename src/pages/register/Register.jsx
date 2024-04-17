@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
-import { FaFacebook } from "react-icons/fa";
+import { IoLogoGithub } from "react-icons/io";
 import {FcGoogle } from "react-icons/fc";
 // import { useContext } from "react";
 // import { AuthContext } from "../authProvider/AuthProvider";
@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../hook/useAuth";
 
 const Register = () => {
-    const {createUser} = useAuth()
+    const {createUser, googleLogin, gitHubLogin} = useAuth()
     
     const {register, handleSubmit, formState: { errors }} = useForm()
 
@@ -22,6 +22,22 @@ const Register = () => {
         })
       }
 
+
+
+      //   for google login
+      const handleGoogleLogin = () => {
+        googleLogin()
+        .then(result =>console.log(result.user))
+      }
+
+
+      //   for github login
+      const handleGitHubLogin = () => {
+        gitHubLogin()
+        .then(result => {
+        console.log(result.user)
+        });
+    }
 
 
 
@@ -76,14 +92,13 @@ const Register = () => {
                             <hr className="w-full mr-8" />
                         </div>
                         <div className="form-control mt-3 px-8 relative">
-                                <button className="btn border-none bg-[#2e68b4] hover:bg-[#2e68b4d6] text-white">Login with Facebook</button>
-                                <FaFacebook className="text-white absolute top-3 left-[60px] text-[24px]"/>
-
-                         </div>
-                         <div className="form-control mt-4 px-8 pb-6 relative">
-                                <button className="btn border-none text-[#00000082] hover:bg-gray-200">Login with Google</button>
-                                <FcGoogle className="absolute top-3 left-[60px] text-[24px]" />
-                            </div>
+                            <button onClick={()=> handleGitHubLogin()} className="btn border-none bg-[black] hover:bg-[#000000cb] text-white">Login with Github</button>
+                            <IoLogoGithub className="text-white absolute top-3 left-[60px] text-[24px]" />
+                        </div>
+                        <div className="form-control mt-4 px-8 pb-6 relative">
+                            <button onClick={()=> handleGoogleLogin()} className="btn border-none text-[#00000082] hover:bg-gray-200">Login with Google</button>
+                            <FcGoogle className="absolute top-3 left-[60px] text-[24px]" />
+                        </div>
                     </div>
                 </div>
             </div>
