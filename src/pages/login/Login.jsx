@@ -79,7 +79,7 @@ const Login = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="hero min-h-screen bg-gray-50 container mb-[80px]">
+            <div className="hero min-h-screen bg-gray-50 container mb-[80px] mx-auto">
                 <div className="hero-content flex-col ">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Login</h1>
@@ -101,7 +101,7 @@ const Login = () => {
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                                 <label className="">
-                                    <p className="text-[14px] w-[200px] mx-auto mt-2 text-[#00000082]">Do not have an account? <Link to='/register' className="hover:link font-semibold text-[14px] text-[#22be0a]">Sign Up</Link>
+                                    <p className="text-[14px] w-[220px] mx-auto mt-2 text-[#00000082]">Don't have an account? <Link to='/register' className="hover:link font-semibold text-[14px] text-[#22be0a]">Sign Up</Link>
                                     </p>
                                 </label>
                             </div>

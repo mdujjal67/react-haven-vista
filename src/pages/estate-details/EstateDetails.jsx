@@ -25,7 +25,7 @@ const EstateDetails = () => {
                     <h1 className='font-bold text-[40px]'>{estate_title}</h1>
                     <p className='text-[20px] font-semibold mt-3'> {segment_name}</p>
                     <hr className='text-[#13131326] mt-2 lg:mt-6 lg:mb-4 mb-0' />
-                    <div className="flex gap-2 items-center text-xl">
+                    <div className="flex gap-2 items-center text-xl pl-3">
                         <CiLocationOn className="mb-1" />
                         <p className="pb-2">{location}</p>
                     </div>

@@ -17,7 +17,7 @@ const Home = () => {
             <div>
                 <SwiperSlider></SwiperSlider>
             </div>
-            <div id="estate" className="my-[100px] container mx-auto">
+            <div id="estate" className=" my-[50px] md:my-[70px] lg:my-[100px] container mx-auto">
                 <EstateContainer></EstateContainer>
             </div>
 

@@ -1,19 +1,21 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../hook/useAuth";
+import { useState } from "react";
 
 
 const Navbar = () => {
     const { user, logOut } = useAuth()
+    const [showUserName, setShowUserName] = useState(false);
     const handleSignOut = () => {
         logOut()
-        .then()
-        .cache()
+            .then()
+            .cache()
     }
     // console.log(user)
     return (
         <div className="container mx-auto">
-            <div className="navbar bg-base-100">
-                <div className="navbar-start">
+            <div className="navbar bg-base-100 flex flex-col md:flex-row lg:flex-row">
+                <div className="navbar-start mr-44 lg:mr-auto md:mr-auto z-10">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -25,7 +27,7 @@ const Navbar = () => {
                             <Link className="bg-gray-100 text-[#131313CC] hover:text-[#23BE0A] p-2 rounded-xl mb-2" to='/agents'>Agents</Link>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl hover:bg-[#22be0ad8] hover:text-white">Haven Vista</a>
+                    <a className="btn btn-ghost text-[18px] md:text-lg lg:text-xl hover:bg-[#22be0ad8] hover:text-white">Haven Vista</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -35,46 +37,36 @@ const Navbar = () => {
                         <NavLink className={({ isActive }) => isActive ? 'isActive menu-item ml-4' : 'menu-item text-[#131313CC] ml-3'} to='/agents'>Agents</NavLink>
                     </ul>
                 </div>
+
+
                 {/* navbar end section */}
-
-
-                <div className="navbar-end">
-                    {/* <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                        </div>
-                    </div> */}
-                    {
-                        user ? <div className="dropdown dropdown-end flex items-center">
-                            <h2>{user?.email}</h2>
+                <div className="navbar-end grid ml-28 lg:ml-auto -mt-4 md:-mt-auto lg:-mt-auto">
+                    {user ?
+                        <div
+                            className="dropdown dropdown-end flex items-center"
+                            onMouseEnter={() => setShowUserName(true)}
+                            onMouseLeave={() => setShowUserName(false)}
+                        >
+                            {showUserName ? null : <h2 className="ml-3 text-[12px] Montserrat">{user?.email}</h2>}
+                                    {showUserName && <h2 className="pr-2 Montserrat text-[12px] lg:text-[14px]">{user?.displayName}</h2>}
+                                    {showUserName ? null : (
                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
-                                    <img src={user?. photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} alt="user" />
+                                    
+                                        <img src={user?.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} alt="user" />
+                                    
                                 </div>
                             </label>
-                              <button onClick={handleSignOut} className="btn btn-sm btn-ghost">Log Out</button>
-                            
-                            {/* <ul className="menu menu-sm dropdown-content mt-3 z-{1} p-2 shadow bg-base-100 rounded-box w-52">
-                                <li>
-                                    <button className="btn btn-sm btn-ghost">Farhan</button>
-                                </li>
-
-                                <li>
-                                    <button onClick={() => logOut()} className="btn btn-sm btn-ghost">Logout</button>
-                                </li>
-                            </ul> */}
+                            )}
+                            <button onClick={handleSignOut} className="btn btn-sm btn-ghost hover:bg-[#22be0ac8] text-white bg-[#23BE0A] lg:ml-2 hover:text-white">Log Out</button>
                         </div>
-                            :
-                            <Link to='/login'>
-                                <button className="btn btn-sm btn-ghost">Login</button>
-                            </Link>
+                        :
+                        <Link to='/login'>
+                            <button className="btn btn-sm btn-ghost">Login</button>
+                        </Link>
                     }
+
                 </div>
-
-
-                {/* <div className="navbar-end">
-                    <Link to='/register' className="btn">Login</Link>
-                </div> */}
             </div>
         </div>
     );

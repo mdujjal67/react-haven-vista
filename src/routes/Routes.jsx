@@ -23,12 +23,16 @@ export const router = createBrowserRouter([
         },
         {
           path: '/home/:id',
-          element: <EstateDetails></EstateDetails> ,
+          element: <PrivateRoute>
+            <EstateDetails></EstateDetails>
+          </PrivateRoute> ,
           loader: () => fetch(`/Estate.json`)
         },
         {
           path:'/update-profile',
-          element:<UpdateProfile></UpdateProfile>
+          element:<PrivateRoute>
+            <UpdateProfile></UpdateProfile>
+          </PrivateRoute>
         },
         {
           path:'/user-profile',
@@ -46,7 +50,9 @@ export const router = createBrowserRouter([
         },
         {
           path:'/agents',
-          element:<Agents></Agents>
+          element:<PrivateRoute>
+            <Agents></Agents>
+          </PrivateRoute>
         },
         {
           path: 'footer',

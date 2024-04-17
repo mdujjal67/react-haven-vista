@@ -48,7 +48,7 @@ const Register = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="hero min-h-screen bg-gray-50 container mb-[80px]">
+            <div className="hero min-h-screen bg-gray-50 container mb-[80px] mx-auto">
                 <div className="hero-content flex-col ">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Sign Up</h1>
@@ -82,7 +82,7 @@ const Register = () => {
                                 {...register("password", { required: true })} />
                                 {errors.password && <span className="text-red-500 text-[14px]">This field is required</span>}
                                 <label className="">
-                                    <p className="text-[14px] w-[200px] text-[#00000082] mx-auto mt-2">Already have an account? <Link to='/login'className="hover:link font-semibold text-[14px] text-[#22be0a]">Login</Link>
+                                    <p className="text-[14px] w-[220px] text-[#00000082] mx-auto mt-2">Already have an account? <Link to='/login'className="hover:link font-semibold text-[14px] text-[#22be0a]">Login</Link>
                                     </p>
                                 </label>
                             </div>
