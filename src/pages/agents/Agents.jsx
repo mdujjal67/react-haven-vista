@@ -5,7 +5,7 @@ import Navbar from "../../components/Navbar";
 const Agents = () => {
 
     useEffect((() => {
-        document.title = "Haven Vista | Agents"
+        document.title = "Haven Vista | Legal Counsel"
     }), [])
 
     return (
@@ -15,15 +15,15 @@ const Agents = () => {
                 <section className="py-6 dark:bg-gray-100 dark:text-gray-800">
                     <div className="container p-4 mx-auto space-y-16 sm:p-10">
                         <div className="space-y-4">
-                            <h3 className="text-2xl font-bold leading-none sm:text-5xl text-center">Meet our Agents</h3>
-                            <p className="max-w-2xl dark:text-gray-600 text-center">Explore our team of dedicated agents ready to assist you in finding your dream home. Our experienced professionals are committed to providing personalized service and expert guidance throughout your real estate journey. Discover the expertise and passion that sets our agents apart.</p>
+                            <h3 className="text-2xl font-bold leading-none sm:text-5xl text-center">Meet our best team</h3>
+                            <p className="lg:w-[700px] dark:text-gray-600 mx-auto">Explore our team of dedicated agents ready to assist you in finding your dream home. Our experienced professionals are committed to providing personalized service and expert guidance throughout your real estate journey. Discover the expertise and passion that sets our agents apart.</p>
                         </div>
                         <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
                             <div className="flex space-x-6">
                                 <img alt="" className="flex-1 flex-shrink-0 object-cover h-56 mb-4 bg-center rounded-sm dark:bg-gray-500" src="https://source.unsplash.com/240x320/?portrait?0" />
                                 <div className="flex flex-col">
                                     <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-                                    <p className="text-sm dark:text-gray-600">Web developer</p>
+                                    <p className="text-sm dark:text-gray-600">Director of Business</p>
                                     <div className="flex mt-2 space-x-2">
                                         <a rel="noopener noreferrer" href="#" title="Twitter" className="dark:text-gray-600">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor" className="w-4 h-4">
@@ -47,7 +47,7 @@ const Agents = () => {
                                 <img alt="" className="flex-1 flex-shrink-0 object-cover h-56 mb-4 bg-center rounded-sm dark:bg-gray-500" src="https://source.unsplash.com/240x320/?portrait?1" />
                                 <div className="flex flex-col">
                                     <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-                                    <p className="text-sm dark:text-gray-600">Web developer</p>
+                                    <p className="text-sm dark:text-gray-600">Marketing Director</p>
                                     <div className="flex mt-2 space-x-2">
                                         <a rel="noopener noreferrer" href="#" title="Twitter" className="dark:text-gray-600">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor" className="w-4 h-4">
@@ -71,7 +71,7 @@ const Agents = () => {
                                 <img alt="" className="flex-1 flex-shrink-0 object-cover h-56 mb-4 bg-center rounded-sm dark:bg-gray-500" src="https://source.unsplash.com/240x320/?portrait?2" />
                                 <div className="flex flex-col">
                                     <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-                                    <p className="text-sm dark:text-gray-600">Web developer</p>
+                                    <p className="text-sm dark:text-gray-600">Operations Lead</p>
                                     <div className="flex mt-2 space-x-2">
                                         <a rel="noopener noreferrer" href="#" title="Twitter" className="dark:text-gray-600">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor" className="w-4 h-4">
@@ -95,7 +95,7 @@ const Agents = () => {
                                 <img alt="" className="flex-1 flex-shrink-0 object-cover h-56 mb-4 bg-center rounded-sm dark:bg-gray-500" src="https://source.unsplash.com/240x320/?portrait?3" />
                                 <div className="flex flex-col">
                                     <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-                                    <p className="text-sm dark:text-gray-600">Web developer</p>
+                                    <p className="text-sm dark:text-gray-600">Property Manager</p>
                                     <div className="flex mt-2 space-x-2">
                                         <a rel="noopener noreferrer" href="#" title="Twitter" className="dark:text-gray-600">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor" className="w-4 h-4">
@@ -119,7 +119,7 @@ const Agents = () => {
                                 <img alt="" className="flex-1 flex-shrink-0 object-cover h-56 mb-4 bg-center rounded-sm dark:bg-gray-500" src="https://source.unsplash.com/240x320/?portrait?4" />
                                 <div className="flex flex-col">
                                     <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-                                    <p className="text-sm dark:text-gray-600">Web developer</p>
+                                    <p className="text-sm dark:text-gray-600">Finance Analyst</p>
                                     <div className="flex mt-2 space-x-2">
                                         <a rel="noopener noreferrer" href="#" title="Twitter" className="dark:text-gray-600">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor" className="w-4 h-4">
@@ -143,7 +143,7 @@ const Agents = () => {
                                 <img alt="" className="flex-1 flex-shrink-0 object-cover h-56 mb-4 bg-center rounded-sm dark:bg-gray-500" src="https://source.unsplash.com/240x320/?portrait?5" />
                                 <div className="flex flex-col">
                                     <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-                                    <p className="text-sm dark:text-gray-600">Web developer</p>
+                                    <p className="text-sm dark:text-gray-600">Legal Advisor</p>
                                     <div className="flex mt-2 space-x-2">
                                         <a rel="noopener noreferrer" href="#" title="Twitter" className="dark:text-gray-600">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor" className="w-4 h-4">

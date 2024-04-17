@@ -49,7 +49,7 @@ export const router = createBrowserRouter([
           element:<Login></Login>
         },
         {
-          path:'/agents',
+          path:'/legal-counsel',
           element:<PrivateRoute>
             <Agents></Agents>
           </PrivateRoute>

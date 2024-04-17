@@ -24,7 +24,7 @@ const Navbar = () => {
                             <Link className="bg-gray-100 text-[#131313CC] hover:text-[#23BE0A] p-2 rounded-xl" to='/'>Home</Link>
                             <Link className="bg-gray-100 text-[#131313CC] hover:text-[#23BE0A] p-2 rounded-xl my-2" to='/update-profile'>Update Profile</Link>
                             <Link className="bg-gray-100 text-[#131313CC] hover:text-[#23BE0A] p-2 rounded-xl mb-2" to='/user-profile'>User Profile</Link>
-                            <Link className="bg-gray-100 text-[#131313CC] hover:text-[#23BE0A] p-2 rounded-xl mb-2" to='/agents'>Agents</Link>
+                            <Link className="bg-gray-100 text-[#131313CC] hover:text-[#23BE0A] p-2 rounded-xl mb-2" to='/agents'>Legal Counsel</Link>
                         </ul>
                     </div>
                     <a className="btn btn-ghost text-[18px] md:text-lg lg:text-xl hover:bg-[#22be0ad8] hover:text-white">Haven Vista</a>
@@ -34,7 +34,7 @@ const Navbar = () => {
                         <NavLink className={({ isActive }) => isActive ? 'isActive menu-item mr-4' : 'menu-item text-[#131313CC] mr-3 color'} to='/'>Home</NavLink>
                         <NavLink className={({ isActive }) => isActive ? 'isActive menu-item' : 'menu-item text-[#131313CC]'} to='/update-profile'>Update Profile</NavLink>
                         <NavLink className={({ isActive }) => isActive ? 'isActive menu-item ml-4' : 'menu-item text-[#131313CC] ml-3'} to='/user-profile'>User Profile</NavLink>
-                        <NavLink className={({ isActive }) => isActive ? 'isActive menu-item ml-4' : 'menu-item text-[#131313CC] ml-3'} to='/agents'>Agents</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? 'isActive menu-item ml-4' : 'menu-item text-[#131313CC] ml-3'} to='/legal-counsel'>Legal Counsel</NavLink>
                     </ul>
                 </div>
 

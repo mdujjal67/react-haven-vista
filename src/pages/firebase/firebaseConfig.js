@@ -4,15 +4,14 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBqferkgUocxuulSqD9fsUst9GzBFk_jbA",
-  authDomain: "haven-vista.firebaseapp.com",
-  projectId: "haven-vista",
-  storageBucket: "haven-vista.appspot.com",
-  messagingSenderId: "807028968175",
-  appId: "1:807028968175:web:28cebf6324331168a2a91a"
+  apiKey: import.meta.env.VITEAPIKEY,
+  authDomain: import.meta.env.VITEAUTHDOMAIN,
+  projectId: import.meta.env.VITEPROJECTID,
+  storageBucket: import.meta.env.VITESTORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITEMESSAGINGSENDERID,
+  appId: import.meta.env.VITEAPPID
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
