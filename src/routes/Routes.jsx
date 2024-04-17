@@ -18,10 +18,10 @@ export const router = createBrowserRouter([
         {
           path: '/',
           element: <Home></Home>,
-          loader: () => fetch('Estate.json'),
+          loader: () => fetch('/Estate.json'),
         },
         {
-          path: '/home/:bookId',
+          path: '/home/:id',
           element: <EstateDetails></EstateDetails> ,
           loader: () => fetch(`Estate.json`)
         },

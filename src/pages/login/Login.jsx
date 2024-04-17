@@ -5,13 +5,13 @@ import { FcGoogle } from "react-icons/fc";
 // import { useContext } from "react";
 // import { AuthContext } from "../authProvider/AuthProvider";
 import { useForm } from "react-hook-form";
+// import auth from "../firebase/firebaseConfig";
 import useAuth from "../../hook/useAuth";
-import auth from "../firebase/firebaseConfig";
+// import auth from "../firebase/firebaseConfig";
 
 const Login = () => {
 
-    const { signInUser } = useAuth()
-    const {googleLogIn} = useAuth()
+    const { signInUser, googleLogin } =  useAuth()
 
     const { register, handleSubmit, formState: { errors }} = useForm()
 
@@ -25,6 +25,12 @@ const Login = () => {
         .catch((error) => {
             console.log(error)
           });
+      }
+
+    //   for google login
+      const handleGoogleLogin = () => {
+        googleLogin()
+        .then(result =>console.log(result.user))
       }
 
 
@@ -74,7 +80,7 @@ const Login = () => {
 
                         </div>
                         <div className="form-control mt-4 px-8 pb-6 relative">
-                            <button onClick={()=> googleLogIn(auth)} className="btn border-none text-[#00000082] hover:bg-gray-200">Login with Google</button>
+                            <button onClick={()=> handleGoogleLogin()} className="btn border-none text-[#00000082] hover:bg-gray-200">Login with Google</button>
                             <FcGoogle className="absolute top-3 left-[60px] text-[24px]" />
                         </div>
                     </div>

@@ -1,7 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../hook/useAuth";
 
 
 const Navbar = () => {
+    const { user, logOut } = useAuth
+    console.log(user)
     return (
         <div className="container mx-auto">
             <div className="navbar bg-base-100">
@@ -27,9 +30,48 @@ const Navbar = () => {
                         <NavLink className={({ isActive }) => isActive ? 'isActive menu-item ml-4' : 'menu-item text-[#131313CC] ml-3'} to='/agents'>Agents</NavLink>
                     </ul>
                 </div>
+                {/* navbar end section */}
+
+
                 <div className="navbar-end">
-                    <Link to='/register' className="btn">Login</Link>
+                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                        <div className="w-10 rounded-full">
+                            <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        </div>
+                    </div>
+                    {
+                        user?.email ? <div className="dropdown dropdown-end">
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img src="" alt="user" />
+                                </div>
+                            </label>
+                            <ul className="menu menu-sm dropdown-content mt-3 z-{1} p-2 shadow bg-base-100 rounded-box w-52">
+                                <li>
+                                    <button className="btn btn-sm btn-ghost">Farhan</button>
+                                </li>
+                                <li>
+                                    <button onClick={() => logOut()} className="btn btn-sm btn-ghost">Logout</button>
+                                </li>
+                            </ul>
+                        </div>
+                            :
+                            <Link to='/login'>
+                                <button className="btn btn-sm btn-ghost">Login</button>
+                            </Link>
+                    }
+                    {
+                        user && <div>
+                            <h1 className="text-red-300">User: {user?.displayName}</h1>
+                            <h2>Email: {user?.email}</h2>
+                        </div>
+                    }
                 </div>
+
+
+                {/* <div className="navbar-end">
+                    <Link to='/register' className="btn">Login</Link>
+                </div> */}
             </div>
         </div>
     );

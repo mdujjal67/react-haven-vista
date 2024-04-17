@@ -1,16 +1,17 @@
 import PropTypes from 'prop-types'; 
 import { createContext, useEffect } from 'react';
 import auth from '../firebase/firebaseConfig'
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import { useState } from 'react';
-import { GoogleAuthProvider } from 'firebase/auth/cordova';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 export const AuthContext = createContext(null)
 
 // social auth provider
-const Provider = new GoogleAuthProvider();
 
+const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({children}) => {
+    
     const [user, setUser] = useState(null)
     console.log(user)
 
@@ -26,36 +27,36 @@ const AuthProvider = ({children}) => {
     }
 
     // google login
-    const googleLogIn = () => {
-       return signInWithPopup(auth, Provider)
-       .then(result => {
-        const loggedUser = result.user
-        console.log(loggedUser)
-        setUser(loggedUser);
-    })
-    .catch(error => {
-        console.log('error', error.message)
-    })
+    const googleLogin = () => {
+       return signInWithPopup(auth, googleProvider)
     }
 
 
     
     // Observer
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        const unSubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
               setUser(user)
             }
           });
+          return () => {
+            return unSubscribe;
+          }
     },[])
 
-
+    // logout
+    const logOut = () => {
+        signOut(auth)
+    }
 
 
     const allValues = {
         createUser,
         signInUser,
-        googleLogIn
+        user,
+        googleLogin,
+        logOut
     }
 
     return (
