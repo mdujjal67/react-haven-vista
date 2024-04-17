@@ -8,10 +8,12 @@ import { useForm } from "react-hook-form";
 // import auth from "../firebase/firebaseConfig";
 import useAuth from "../../hook/useAuth";
 // import auth from "../firebase/firebaseConfig";
+import { IoLogoGithub } from "react-icons/io";
+
 
 const Login = () => {
 
-    const { signInUser, googleLogin } =  useAuth()
+    const { signInUser, googleLogin, gitHubLogin } =  useAuth()
 
     const { register, handleSubmit, formState: { errors }} = useForm()
 
@@ -25,6 +27,15 @@ const Login = () => {
         .catch((error) => {
             console.log(error)
           });
+
+
+        gitHubLogin(email, password)
+        .then(result => {
+        console.log(result.user)
+        })
+        .catch((error) => {
+        console.log(error)
+        });
       }
 
     //   for google login
@@ -33,6 +44,16 @@ const Login = () => {
         .then(result =>console.log(result.user))
       }
 
+
+    //   for google login
+      const handlegitHubLogin = () => {
+        gitHubLogin()
+        .then(result => {
+        console.log(result.user)
+        });
+
+        
+    }
 
 
 
@@ -61,7 +82,7 @@ const Login = () => {
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                                 <label className="">
-                                    <p className="text-[14px] w-[200px] mx-auto mt-2 text-[#00000082]">Don't have an account? <Link to='/register' className="hover:link font-semibold text-[14px] text-[#22be0a]">Sign Up</Link>
+                                    <p className="text-[14px] w-[200px] mx-auto mt-2 text-[#00000082]">Do not have an account? <Link to='/register' className="hover:link font-semibold text-[14px] text-[#22be0a]">Sign Up</Link>
                                     </p>
                                 </label>
                             </div>
@@ -75,8 +96,8 @@ const Login = () => {
                             <hr className="w-full mr-8" />
                         </div>
                         <div className="form-control mt-3 px-8 relative">
-                            <button className="btn border-none bg-[#2e68b4] hover:bg-[#2e68b4d6] text-white">Login with Facebook</button>
-                            <FaFacebook className="text-white absolute top-3 left-[60px] text-[24px]" />
+                            <button onClick={()=> handlegitHubLogin()} className="btn border-none bg-[black] hover:bg-[#000000cb] text-white">Login with Github</button>
+                            <IoLogoGithub className="text-white absolute top-3 left-[60px] text-[24px]" />
 
                         </div>
                         <div className="form-control mt-4 px-8 pb-6 relative">

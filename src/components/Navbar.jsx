@@ -3,7 +3,12 @@ import useAuth from "../hook/useAuth";
 
 
 const Navbar = () => {
-    const { user, logOut } = useAuth
+    const { user, logOut } = useAuth()
+    const handleSignOut = () => {
+        logOut()
+        .then()
+        .cache()
+    }
     console.log(user)
     return (
         <div className="container mx-auto">
@@ -34,37 +39,35 @@ const Navbar = () => {
 
 
                 <div className="navbar-end">
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                    {/* <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
                             <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                         </div>
-                    </div>
+                    </div> */}
                     {
-                        user?.email ? <div className="dropdown dropdown-end">
+                        user ? <div className="dropdown dropdown-end flex items-center">
+                            <h2>Email: {user?.email}</h2>
                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
-                                    <img src="" alt="user" />
+                                    <img src={user?. photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} alt="user" />
                                 </div>
                             </label>
-                            <ul className="menu menu-sm dropdown-content mt-3 z-{1} p-2 shadow bg-base-100 rounded-box w-52">
+                              <button onClick={handleSignOut} className="btn btn-sm btn-ghost">Sign Out</button>
+                            
+                            {/* <ul className="menu menu-sm dropdown-content mt-3 z-{1} p-2 shadow bg-base-100 rounded-box w-52">
                                 <li>
                                     <button className="btn btn-sm btn-ghost">Farhan</button>
                                 </li>
+
                                 <li>
                                     <button onClick={() => logOut()} className="btn btn-sm btn-ghost">Logout</button>
                                 </li>
-                            </ul>
+                            </ul> */}
                         </div>
                             :
                             <Link to='/login'>
                                 <button className="btn btn-sm btn-ghost">Login</button>
                             </Link>
-                    }
-                    {
-                        user && <div>
-                            <h1 className="text-red-300">User: {user?.displayName}</h1>
-                            <h2>Email: {user?.email}</h2>
-                        </div>
                     }
                 </div>
 
