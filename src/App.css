@@ -27,6 +27,7 @@ h1,h2,h3,h4,h5,h6{
     color: #23BE0A;
     border-radius: 4px;
 }
+
 .menu-item{
     padding: 13px 16px;
     transition: all .3s ease;

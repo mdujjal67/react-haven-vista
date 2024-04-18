@@ -27,7 +27,7 @@ const UpdateProfile = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <h1 className="pt-14 md:pt-20 lg:pt-24 text-center text-2xl">Hi! <span className="text-[#46af36] Montserrat font-bold">{user?.displayName}</span></h1>
+            <h1 className="pt-14 md:pt-20 lg:pt-24 text-center text-2xl">Hi! <span className="text-[#46af36] Montserrat font-bold">{user?.displayName || "User"}</span></h1>
             <p className="text-center">Update your profile</p>
             <div className="w-24 lg:w-28 lg:h-28 h-24 rounded-full mx-auto mt-10 bg-gray-200">
                 <img className="rounded-full w-full" src={user?.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} alt="user photo" />

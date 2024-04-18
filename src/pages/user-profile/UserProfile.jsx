@@ -21,10 +21,11 @@ const UserProfile = () => {
             </div>
                 <div className="space-y-4 text-center divide-y dark:divide-gray-300">
                     <div className="my-2 space-y-1">
-                        <h2 className="text-xl font-semibold sm:text-2xl">{user?.displayName}</h2>
+                        <h2 className="Montserrat text-xl font-semibold sm:text-2xl">{user?.displayName}</h2>
+                        <h2 className="work-sans font-normal">{user?.email}</h2>
                         <div className=" flex items-center text-center mb-5">
-                            <MdWorkspacePremium className="ml-14 text-[14px]"/>
-                            <p className="pr-5 text-xs sm:text-base dark:text-gray-600 ">Premium User</p>
+                            <MdWorkspacePremium className="text-yellow-400 ml-14 text-[14px] "/>
+                            <p className="pr-5 text-[14px] dark:text-gray-600 ">Premium User</p>
                         </div>
                     </div>
                     <div className="flex justify-center pt-2 space-x-4 align-center mt-5">
