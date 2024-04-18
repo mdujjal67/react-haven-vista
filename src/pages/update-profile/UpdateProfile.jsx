@@ -20,8 +20,7 @@ const UpdateProfile = () => {
     // Function to handle form submission
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Update user profile with new data
-        // You can call your update profile function here
+
     };
 
     return (

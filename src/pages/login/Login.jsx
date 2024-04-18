@@ -1,17 +1,13 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import { FcGoogle } from "react-icons/fc";
-// import { useContext } from "react";
-// import { AuthContext } from "../authProvider/AuthProvider";
 import { useForm } from "react-hook-form";
-// import auth from "../firebase/firebaseConfig";
 import useAuth from "../../hook/useAuth";
-// import auth from "../firebase/firebaseConfig";
 import { IoLogoGithub } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
-
+import toast from "react-hot-toast";
 
 
 const Login = () => {
@@ -54,10 +50,12 @@ const Login = () => {
                 console.log(result.user)
                 reset();
                 navigate(from)
+                toast.success('Login Successful!');
             })
             .catch((error) => {
                 console.log(error)
                 setLoginError('Wrong Email ID or Password! Please enter correct information.', error)
+                toast.error('Please Enter Correct Information!');
             });
     }
 
@@ -65,7 +63,8 @@ const Login = () => {
     const handleGoogleLogin = () => {
         googleLogin()
             .then(result => console.log(result.user))
-        navigate(from)
+        toast.success('Login Successful!');
+        navigate(from);
     }
 
 
@@ -76,10 +75,9 @@ const Login = () => {
                 console.log(result.user)
                 navigate(from)
             });
-
+        toast.success('Login Successful!');
 
     }
-
 
 
     return (
@@ -102,19 +100,19 @@ const Login = () => {
 
                             {/* This is for Password field*/}
                             <div className="form-control mt-4">
-                                <input 
-                                type={showPassword ?"text" : "password"} 
-                                name="password" 
-                                placeholder="Password" 
-                                className="input input-bordered -mt-1 "
-                                {...register("password", { required: true })} />
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    name="password"
+                                    placeholder="Password"
+                                    className="input input-bordered -mt-1 "
+                                    {...register("password", { required: true })} />
                                 <a className="relative" href="#">
-                                    <span className="absolute right-4 -top-8" onClick={()=> setShowPassword(!showPassword)}>
+                                    <span className="absolute right-4 -top-8" onClick={() => setShowPassword(!showPassword)}>
                                         {showPassword ? <FaEye /> : <FaEyeSlash />}
                                     </span>
                                 </a>
                                 {errors.password && <span className="text-red-500 text-[14px]">This field is required</span>}
-                                
+
                                 {/* input field error show */}
                                 <div>
                                     {
@@ -122,7 +120,7 @@ const Login = () => {
                                     }
                                 </div>
                                 <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                    <Link to='/forgot-password' className="label-text-alt link link-hover">Forgot password?</Link>
                                 </label>
                                 <label className="">
                                     <p className="text-[14px] w-[220px] mx-auto mt-2 text-[#00000082]">Do not have an account? <Link to='/register' className="hover:link font-semibold text-[14px] text-[#22be0a]">Sign Up</Link>

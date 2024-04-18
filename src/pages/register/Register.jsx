@@ -2,13 +2,16 @@ import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import { IoLogoGithub } from "react-icons/io";
 import {FcGoogle } from "react-icons/fc";
-// import { useContext } from "react";
-// import { AuthContext } from "../authProvider/AuthProvider";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hook/useAuth";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa6";
 
 const Register = () => {
+
+    const [showPassword, setShowPassword] = useState(false)
 
     const [registerError, setRegisterError] = useState('')
 
@@ -24,16 +27,19 @@ const Register = () => {
 
         if (!/(?=.*[a-z])(?=.*[A-Z]).{6,}/.test(password)) {
             setRegisterError('Password must be at least 6 characters long and contain at least one uppercase letter and one lowercase letter');
+            toast.error('Please provide valid password!');
             return;
+            
         }
         createUser(email, password)
         .then(result => {
             console.log(result)
+            toast.success('User Registered Successfully!');
             reset();
         })
         .catch((error) => {
             console.log(error)
-            // password validation with the 'useForm' hook from 'react-hook-form'.
+            return toast.error('This User Already Exists!');
         });
 
       }
@@ -91,8 +97,17 @@ const Register = () => {
 
                             {/* This is for Password field*/}
                             <div className="form-control">
-                                <input type="password" name="password" placeholder="Password" className="input input-bordered -mt-1" 
+                                <input 
+                                type={showPassword ?"text" : "password"}  
+                                name="password" 
+                                placeholder="Password" 
+                                className="input input-bordered -mt-1" 
                                 {...register("password", { required: true })} />
+                                <a className="relative" href="#">
+                                    <span className="absolute right-4 -top-8" onClick={()=> setShowPassword(!showPassword)}>
+                                        {showPassword ? <FaEye /> : <FaEyeSlash />}
+                                    </span>
+                                </a>
                                 {errors.password && <span className="text-red-500 text-[14px]">This field is required</span>}
                                 {/* input field error show */}
                                 <div>
