@@ -11,7 +11,7 @@ const Navbar = () => {
             .then()
             .cache()
     }
-    // console.log(user)
+    console.log(user)
     return (
         <div className="container mx-auto">
             <div className="navbar bg-base-100 flex flex-col md:flex-row lg:flex-row">
@@ -30,17 +30,17 @@ const Navbar = () => {
                             <Link className="bg-gray-100 text-[#131313CC] hover:text-[#23BE0A] p-2 rounded-xl mb-2" to='/agents'>Legal Counsel</Link>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-[18px] md:text-lg lg:text-xl hover:bg-[#22be0ad8] hover:text-white">Haven Vista</a>
+                    <Link to='/' className="btn btn-ghost text-[18px] md:text-lg lg:text-xl hover:bg-[#22be0ad8] hover:text-white">Haven Vista</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <NavLink className={({ isActive }) => isActive ? 'isActive menu-item mr-4' : 'menu-item text-[#131313CC] mr-3 color'} to='/'>Home</NavLink>
 
-                        <NavLink className={({ isActive }) => isActive ? 'isActive menu-item ml-4' : 'menu-item text-[#131313CC] ml-3'} to='/user-profile'>User Profile</NavLink>
-                        
+                        <NavLink className={({ isActive }) => isActive ? 'isActive menu-item' : 'menu-item text-[#131313CC]'} to='/update-profile'>Update Profile</NavLink>
+
                         {/* protected route: After login the menu item will appear */}
                         {
-                            user && (<NavLink className={({ isActive }) => isActive ? 'isActive menu-item' : 'menu-item text-[#131313CC]'} to='/update-profile'>Update Profile</NavLink>)
+                            user && (<NavLink className={({ isActive }) => isActive ? 'isActive menu-item ml-4' : 'menu-item text-[#131313CC] ml-3'} to='/user-profile'>User Profile</NavLink>)
                         }
 
                         <NavLink className={({ isActive }) => isActive ? 'isActive menu-item ml-4' : 'menu-item text-[#131313CC] ml-3'} to='/legal-counsel'>Legal Counsel</NavLink>
@@ -51,27 +51,30 @@ const Navbar = () => {
                 {/* navbar end section */}
                 <div className="navbar-end grid ml-28 lg:ml-auto -mt-4 md:-mt-auto lg:-mt-auto">
                     {user ?
-                        <div
+                        <NavLink to='/user-profile'>
+                            <div
                             className="dropdown dropdown-end flex items-center"
                             onMouseEnter={() => setShowUserName(true)}
                             onMouseLeave={() => setShowUserName(false)}
                         >
-                            {/* {showUserName ? null : <h2 className="ml-3 text-[12px] Montserrat">{user?.email}</h2>} */}
-                                    {showUserName && <h2 className="pr-2 Montserrat text-[12px] lg:text-[14px]">{user?.displayName || 'user name'}</h2>}
-                                    {showUserName ? null : (
-                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                <div className="w-10 rounded-full">
-                                    
-                                        <img src={user?.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} alt="user" />
-                                    
-                                </div>
-                            </label>
+                            {/* for avatar name */}
+                            {showUserName && <h2 className="pr-2 Montserrat text-[12px] lg:text-[14px]">
+                                {user?.displayName || 'User'}</h2>}
+
+                            {/* for avatar image */}
+                            {user && !showUserName && (
+                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-10 rounded-full">
+                                        <img referrerPolicy="no-referrer" src={user?.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} alt="user" />
+                                    </div>
+                                </label>
                             )}
                             <button onClick={handleSignOut} className="btn btn-sm btn-ghost hover:bg-[#22be0ac8] text-white bg-[#23BE0A] lg:ml-2 hover:text-white">Log Out</button>
                         </div>
+                        </NavLink>
                         :
                         <Link to='/login'>
-                            <button className="btn btn-sm btn-ghost">Login</button>
+                            <button className="btn btn-sm btn-ghost hover:bg-[#22be0ad8] hover:text-white">Login</button>
                         </Link>
                     }
 

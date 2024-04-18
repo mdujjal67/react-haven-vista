@@ -62,9 +62,13 @@ const Login = () => {
     //   for google login
     const handleGoogleLogin = () => {
         googleLogin()
-            .then(result => console.log(result.user))
-        toast.success('Login Successful!');
-        navigate(from);
+            .then(result => {
+                console.log(result.user)
+                toast.success('Login Successful!');
+                navigate(from);
+            })
+        
+       
     }
 
 
@@ -123,7 +127,7 @@ const Login = () => {
                                     <Link to='/forgot-password' className="label-text-alt link link-hover">Forgot password?</Link>
                                 </label>
                                 <label className="">
-                                    <p className="text-[14px] w-[220px] mx-auto mt-2 text-[#00000082]">Do not have an account? <Link to='/register' className="hover:link font-semibold text-[14px] text-[#22be0a]">Sign Up</Link>
+                                    <p className="text-[14px] w-[220px] mx-auto mt-2 text-[#00000082]">Don't have an account? <Link to='/register' className="hover:link font-semibold text-[14px] text-[#22be0a]">Sign Up</Link>
                                     </p>
                                 </label>
                             </div>

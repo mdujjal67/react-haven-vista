@@ -52,7 +52,9 @@ const Register = () => {
       //   for google login
       const handleGoogleLogin = () => {
         googleLogin()
-        .then(result =>console.log(result.user))
+        .then(result =>{
+            console.log(result.user)
+        })
       }
 
 
