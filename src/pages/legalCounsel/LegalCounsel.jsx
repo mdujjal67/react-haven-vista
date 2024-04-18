@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Navbar from "../../components/Navbar";
 
 
-const Agents = () => {
+const LegalCounsel = () => {
 
     useEffect((() => {
         document.title = "Haven Vista | Legal Counsel"
@@ -171,4 +171,4 @@ const Agents = () => {
     );
 };
 
-export default Agents;
+export default LegalCounsel;

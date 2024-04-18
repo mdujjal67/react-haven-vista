@@ -48,7 +48,7 @@ const Navbar = () => {
                             onMouseLeave={() => setShowUserName(false)}
                         >
                             {showUserName ? null : <h2 className="ml-3 text-[12px] Montserrat">{user?.email}</h2>}
-                                    {showUserName && <h2 className="pr-2 Montserrat text-[12px] lg:text-[14px]">{user?.displayName}</h2>}
+                                    {showUserName && <h2 className="pr-2 Montserrat text-[12px] lg:text-[14px]">{user?.displayName || 'user name'}</h2>}
                                     {showUserName ? null : (
                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">

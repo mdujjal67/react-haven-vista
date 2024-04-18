@@ -34,33 +34,28 @@ const Login = () => {
     }
 
     
-    const { register, handleSubmit, formState: { errors }} = useForm()
+    const { register, handleSubmit, formState: { errors }, reset} = useForm()
 
     const onSubmit= (data) => {
+
         const {email, password} = data
 
         signInUser(email, password)
         .then(result => {
             console.log(result.user)
+            reset();
+            navigate(from)
         })
         .catch((error) => {
             console.log(error)
           });
-
-
-        // gitHubLogin(email, password)
-        // .then(result => {
-        // console.log(result.user)
-        // })
-        // .catch((error) => {
-        // console.log(error)
-        // });
       }
 
     //   for google login
       const handleGoogleLogin = () => {
         googleLogin()
         .then(result =>console.log(result.user))
+        navigate(from)
       }
 
 
@@ -69,7 +64,8 @@ const Login = () => {
         gitHubLogin()
         .then(result => {
         console.log(result.user)
-        });
+        navigate(from)
+    });
 
         
     }

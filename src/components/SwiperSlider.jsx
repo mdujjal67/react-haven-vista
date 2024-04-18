@@ -17,7 +17,7 @@ const SwipperSlider = () => {
             <Swiper spaceBetween={30}
                 centeredSlides={true}
                 autoplay={{
-                    delay: 2500,
+                    delay: 2000,
                     disableOnInteraction: true,
                 }}
                 pagination={{
@@ -29,7 +29,7 @@ const SwipperSlider = () => {
                 className="mySwiper">
                 <SwiperSlide className=''>
                     <div className=''>
-                        <img className='h-[380px] lg:h-[500px] relative rounded-2xl w-full' src="/src/assets/banner-1.jpg" alt="property-image" />
+                        <img className='h-[380px] lg:h-[500px] relative rounded-2xl w-full' src="https://i.ibb.co/SfK1D7h/banner-1.jpg" alt="property-image" />
                         <div className='absolute top-[30%]'>
                             <BannerContent></BannerContent>
                         </div>
@@ -37,7 +37,7 @@ const SwipperSlider = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div>
-                        <img className='h-[380px] lg:h-[500px] rounded-2xl w-full' src="/src/assets/banner-2.1.jpg" alt="property-image" />
+                        <img className='h-[380px] lg:h-[500px] rounded-2xl w-full' src="https://i.ibb.co/FqpfzT5/banner-2-1.jpg" alt="property-image" />
                         <div className='absolute top-[30%]'>
                             <BannerContent></BannerContent>
                         </div>
@@ -45,7 +45,7 @@ const SwipperSlider = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div>
-                        <img className='h-[380px] lg:h-[500px] rounded-2xl w-full' src="/src/assets/banner-3.jpg" alt="property-image" />
+                        <img className='h-[380px] lg:h-[500px] rounded-2xl w-full' src="https://i.ibb.co/HXpsp5T/banner-3.jpg" alt="property-image" />
                         <div className='absolute top-[30%]'>
                             <BannerContent></BannerContent>
                         </div>
@@ -53,7 +53,7 @@ const SwipperSlider = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div>
-                        <img className='h-[380px] lg:h-[500px] bg-blend-overlay rounded-2xl w-full' src="/src/assets/banner-5.jpg" alt="property-image" />
+                        <img className='h-[380px] lg:h-[500px] bg-blend-overlay rounded-2xl w-full' src="https://i.ibb.co/4fbvkZR/banner-5.jpg" alt="property-image" />
                         <div className='absolute top-[30%]'>
                             <BannerContent></BannerContent>
                         </div>

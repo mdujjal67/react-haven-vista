@@ -4,7 +4,7 @@ import Footer from "../pages/footer/Footer";
 import Home from "../pages/home/Home";
 import UpdateProfile from "../pages/update-profile/UpdateProfile";
 import UserProfile from "../pages/user-profile/UserProfile";
-import Agents from "../pages/agents/Agents";
+import Agents from "../pages/legalCounsel/LegalCounsel";
 import EstateDetails from "../pages/estate-details/EstateDetails";
 import NotFoundPage from "../components/NotFoundPage";
 import Register from "../pages/register/Register";

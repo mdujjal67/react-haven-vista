@@ -1,42 +1,48 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
 import useAuth from "../../hook/useAuth";
-// import './index.css'
-import '../../App.css'
 import { MdOutlinePassword } from "react-icons/md";
 
-
-
-
 const UpdateProfile = () => {
-    const { user } = useAuth()
+    const { user } = useAuth();
 
-    useEffect((() => {
-        document.title = "Haven Vista | Update-Profile"
-    }), [])
+    // State variables for user profile data
+    const [displayName, setDisplayName] = useState(user?.displayName || "your name");
+    console.log(displayName)
+    const [email, setEmail] = useState(user?.email || "");
+    const [password, setPassword] = useState("******");
+
+    // Update document title
+    useEffect(() => {
+        document.title = "Haven Vista | Update-Profile";
+    }, []);
+
+    // Function to handle form submission
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // Update user profile with new data
+        // You can call your update profile function here
+    };
 
     return (
         <div>
             <Navbar></Navbar>
             <h1 className="pt-14 md:pt-20 lg:pt-24 text-center text-2xl">Hi! <span className="text-[#46af36] Montserrat font-bold">{user?.displayName}</span></h1>
             <p className="text-center">Update your profile</p>
-            <div className="w-24 h-24 rounded-full mx-auto mt-10">
-                <img className="rounded-full" src={user?.photoURL} alt="" />
+            <div className="w-24 lg:w-28 lg:h-28 h-24 rounded-full mx-auto mt-10 bg-gray-200">
+                <img className="rounded-full w-full" src={user?.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} alt="user photo" />
             </div>
-            <p className="text-center mx-auto mt-4 text-gray-500">{user?.email}</p>
-            <form className="w-[320px] mx-auto mt-10">
+            <p className="text-center mx-auto mt-2 text-gray-500">{user?.email}</p>
+            <form className="w-[320px] mx-auto mt-10" onSubmit={handleSubmit}>
                 <label className="input input-bordered flex items-center gap-2 mx-4 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" /></svg>
-                    <input type="text" className="grow" placeholder="Username" />
+                    <input type="text" className="grow text-gray-500" value={displayName} onChange={(e) => setDisplayName(e.target.value)} />
                 </label>
                 <label className="input input-bordered flex items-center gap-2 mx-4 mt-4 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" /><path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" /></svg>
-                    <input type="email" className="grow " placeholder="Email" />
+                    <input type="email" className="grow text-gray-500" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </label>
                 <label className="input input-bordered flex items-center gap-2 mx-4 mt-4 rounded-full">
                     <MdOutlinePassword className="text-gray-600" />
-
-                    <input type="password" className="grow " placeholder="Password" />
+                    <input type="password" className="grow text-gray-500" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
                 </label>
                 <button className="btn input-bordered flex items-center gap-2 mx-4 mt-4 rounded-full w-[290px] bg-black text-white">Save Changes</button>
             </form>

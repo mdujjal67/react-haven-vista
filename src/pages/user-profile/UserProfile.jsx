@@ -16,7 +16,9 @@ const UserProfile = () => {
         <div>
             <Navbar></Navbar>
             <div className="flex flex-col justify-center max-w-xs p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800 container mx-auto mt-10 md:mt-16 lg:mt-20 py-10">
-                <img src={user?.photoURL} alt="" className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
+            <div className="w-24 lg:w-32 lg:h-32 h-24 rounded-full mx-auto mt-10 bg-gray-200">
+                <img className="rounded-full w-full" src={user?.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} alt="user photo" />
+            </div>
                 <div className="space-y-4 text-center divide-y dark:divide-gray-300">
                     <div className="my-2 space-y-1">
                         <h2 className="text-xl font-semibold sm:text-2xl">{user?.displayName}</h2>
