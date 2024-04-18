@@ -9,10 +9,14 @@ import useAuth from "../../hook/useAuth";
 // import auth from "../firebase/firebaseConfig";
 import { IoLogoGithub } from "react-icons/io";
 import { useEffect, useState } from "react";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa6";
+
 
 
 const Login = () => {
 
+    const [showPassword, setShowPassword] = useState(false)
     const [loginError, setLoginError] = useState('')
 
     useEffect((() => {
@@ -98,8 +102,17 @@ const Login = () => {
 
                             {/* This is for Password field*/}
                             <div className="form-control mt-4">
-                                <input type="password" name="password" placeholder="Password" className="input input-bordered -mt-1"
-                                    {...register("password", { required: true })} />
+                                <input 
+                                type={showPassword ?"text" : "password"} 
+                                name="password" 
+                                placeholder="Password" 
+                                className="input input-bordered -mt-1 "
+                                {...register("password", { required: true })} />
+                                <a className="relative" href="#">
+                                    <span className="absolute right-4 -top-8" onClick={()=> setShowPassword(!showPassword)}>
+                                        {showPassword ? <FaEye /> : <FaEyeSlash />}
+                                    </span>
+                                </a>
                                 {errors.password && <span className="text-red-500 text-[14px]">This field is required</span>}
                                 
                                 {/* input field error show */}
@@ -129,12 +142,12 @@ const Login = () => {
                         </div>
                         {/* google login */}
                         <div className="form-control mt-3 px-8 relative">
-                            <button onClick={() => handleSocialLogin(handleGitHubLogin)} className="btn border-none bg-[black] hover:bg-[#000000cb] text-white">Login with Github</button>
+                            <button onClick={() => handleSocialLogin(handleGitHubLogin)} className="btn border-none bg-[black] hover:bg-gray-500 text-white">Login with Github</button>
                             <IoLogoGithub className="text-white absolute top-3 left-[60px] text-[24px]" />
                         </div>
                         {/* github login */}
                         <div className="form-control mt-4 px-8 pb-6 relative">
-                            <button onClick={() => handleSocialLogin(handleGoogleLogin)} className="btn border-none text-[#00000082] hover:bg-gray-200">Login with Google</button>
+                            <button onClick={() => handleSocialLogin(handleGoogleLogin)} className="btn border-none text-[#00000082] hover:bg-gray-300">Login with Google</button>
                             <FcGoogle className="absolute top-3 left-[60px] text-[24px]" />
                         </div>
                     </div>
