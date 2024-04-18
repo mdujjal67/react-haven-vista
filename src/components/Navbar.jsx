@@ -29,7 +29,7 @@ const Navbar = () => {
                                 user && (<Link className="bg-gray-100 text-[#131313CC] hover:text-[#23BE0A] p-2 rounded-xl mb-2" to='/user-profile'>User Profile</Link>)
                             }
 
-                            <Link className="bg-gray-100 text-[#131313CC] hover:text-[#23BE0A] p-2 rounded-xl mb-2" to='/agents'>Legal Counsel</Link>
+                            <Link className="bg-gray-100 text-[#131313CC] hover:text-[#23BE0A] p-2 rounded-xl mb-2" to='/legal-counsel'>Legal Counsel</Link>
                         </ul>
                     </div>
                     <Link to='/' className="btn btn-ghost text-[18px] md:text-lg lg:text-xl hover:bg-[#22be0ad8] hover:text-white">Haven Vista</Link>

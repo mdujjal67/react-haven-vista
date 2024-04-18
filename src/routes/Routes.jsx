@@ -4,12 +4,12 @@ import Footer from "../pages/footer/Footer";
 import Home from "../pages/home/Home";
 import UpdateProfile from "../pages/update-profile/UpdateProfile";
 import UserProfile from "../pages/user-profile/UserProfile";
-import Agents from "../pages/legalCounsel/LegalCounsel";
 import EstateDetails from "../pages/estate-details/EstateDetails";
 import NotFoundPage from "../components/NotFoundPage";
 import Register from "../pages/register/Register";
 import Login from "../pages/login/Login";
 import PrivateRoute from "../components/privateRoute/PrivateRoute";
+import LegalCounsel from "../pages/legalCounsel/LegalCounsel";
 
 export const router = createBrowserRouter([
     {
@@ -51,7 +51,7 @@ export const router = createBrowserRouter([
         {
           path:'/legal-counsel',
           element:<PrivateRoute>
-            <Agents></Agents>
+            <LegalCounsel></LegalCounsel>
           </PrivateRoute>
         },
         {
