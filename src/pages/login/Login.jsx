@@ -36,7 +36,7 @@ const Login = () => {
     }
 
 
-    const { register, handleSubmit, formState: { errors }, reset } = useForm()
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const onSubmit = (data) => {
         // reset error
@@ -67,9 +67,7 @@ const Login = () => {
                 toast.success('Login Successful!');
                 navigate(from);
             })
-        
-       
-    }
+    };
 
 
     //   for github login

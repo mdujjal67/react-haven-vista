@@ -5,7 +5,7 @@ import { useEffect } from "react";
 const EstateDetails = () => {
 
     useEffect((()=>{
-        document.title = "Haven Vista | Extate-Details"
+        document.title = "Haven Vista | Estate-Details"
     }),[])
 
     const EstateDetails = useLoaderData();
